@@ -1,12 +1,15 @@
 .wrapper{
     display:flex;
     justify-content: center;
-    align-items: stretch;
+    align-items: center;
     flex-direction: column;
     width: 100%;
+    flex-wrap: wrap;
+    align-content: center;
 }
 .sliderContainer{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width:600px;
@@ -24,6 +27,12 @@
   }
 .slider:hover{
     opacity: 1;
+}
+input[type='button']{
+    transition: 0.01s ease-in-out;
+}
+input[type='button']:hover{
+    transform: scale(1.05);
 }
   
   .slider::-webkit-slider-thumb {
@@ -44,31 +53,16 @@
     cursor: pointer;
   }
 #grid-container{
-    display: inline-grid; 
-    vertical-align: top;
-    border: 1px solid;
-    justify-content: center;
+    display: grid; 
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    margin: 10px;
     width: 480px;
     height: 480px;
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
 }
 .cell{
     border: 1px solid black;
-    background: #f8ffde;
-    width:100px;
-    height: 100px;
-    aspect-ratio: 1;
+    background-color: blue;
+    user-select: none;
   }
-.gridcont > :nth-child(2) {
-    grid-column: 2;
-}
-.gridcont > :nth-last-child(n + 5) ~ :nth-child(3) { 
-    grid-column: 3;
-   }
-   
-.gridcont > :nth-last-child(n + 10) ~ :nth-child(4) { 
-    grid-column: 4;
-   }
-   
-.gridcont > :nth-last-child(n + 17) ~ :nth-child(5) { 
-    grid-column: 5;
-   }
