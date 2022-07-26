@@ -54,8 +54,6 @@ input[type='button']:hover{
   }
 #grid-container{
     display: grid; 
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(8, 1fr);
     margin: 10px;
     width: 480px;
     height: 480px;
